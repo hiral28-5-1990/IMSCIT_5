@@ -1,0 +1,103 @@
+<html>
+	<head>
+		
+		<title>Javascript Example</title>
+		
+		<script type="text/javascript">
+			function internalAlert(){
+				alert("Show the Alert Message.");
+			}
+			
+			function internalConfirm(){
+				if(confirm("Are you Delete the file")){
+					alert("yes");
+				}
+				else{
+					alert("NO");
+				}
+			}
+			function internalPrompt(){
+				var fName=prompt("Enter Firstname Here..");
+				var lName=prompt("Enter Lastname Here..");
+				alert(fName+" "+lName);
+			}
+			function externalAlert()
+			{
+				alert("Display External Alert");
+			}
+			function externalConfirm()
+			{
+				if(confirm("Are you Delete the File")){;
+					alert("Yes");
+					}
+					else{
+						alert("No");
+					}
+					
+			}
+			function externalPrompt(){
+				var fName=prompt("Enter Firstname Here..");
+				var lName=prompt("Enter Lastname Here..");
+				alert(fName+" "+lName);
+			}
+			function bodyBGGreen(){
+				document.body.style.backgroundColor="Green";
+			}
+			function divBGGray(){
+				document.getElementById("D1").style.backgroundColor="Gray";
+			}
+
+			function divBGDynamic(){
+				document.getElementById("D1").style.backgroundColor=prompt("Enter color name here..");
+			}
+			function bodyBGDynamic(){
+				document.body.style.backgroundColor=prompt("Enter color name here..");
+			}
+
+			function bodyBGCP1(){
+				document.body.style.backgroundColor=document.getElementById("CP1").value;
+			}
+			function divBGCP2(){
+				document.getElementById("D1").style.backgroundColor=document.getElementById("CP2").value;
+			}
+
+			
+		</script>
+		<script src="scripts/demo.js" type="text/javascript"></script>
+		<style type="text/css">
+			body{background-image: url("image/port.jpg");background-repeat:repeat-y;}
+			div{background-color:#ff00ff;height:250px;width: 300px;}
+			#D1{padding:20px 0px 0px 30px}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="D1">
+			Welcome to Javascript
+		</div>
+		<hr/>
+		<input type="button" style="background-color:green" value="Alert Inline" onclick="alert('Welcome to the javascript demo')" />&nbsp;&nbsp;
+		<input type="button" style="background-color:green"  value="Confirm Inline" onclick="confirm('Are you sure you want to delete?')" />&nbsp;&nbsp;
+		<input type="button" style="background-color:green" value="Prompt Inline" onclick="prompt('Enter Firstname')" />&nbsp;&nbsp;
+		<hr/>
+		<input type="button" value="Alert function" onclick="internalAlert()" />&nbsp;&nbsp;
+		<input type="button" value="Confirm function" onclick="internalConfirm()" />&nbsp;&nbsp;
+		<input type="button" value="Prompt function" onclick="internalPrompt()" />&nbsp;&nbsp;
+		<hr/>
+		
+		<input type="button" value="Alert External" onclick="externalAlert()"/>&nbsp;&nbsp;
+		<input type="button" value="Confirm External" onclick="externalConfirm()"/>&nbsp;&nbsp;
+		<input type="button" value="Prompt External" onclick="externalPrompt()"/>&nbsp;&nbsp;
+		<hr/>
+		<input type="button" value="Body Bg Green" onclick="bodyBGGreen()" />&nbsp;&nbsp;
+		<input type="button" value="Div Bg Gray" onclick="divBGGray()" />&nbsp;&nbsp;
+		<hr/>
+		<input type="button" value="Body Bg Prompt" onclick="bodyBGDynamic()" />&nbsp;&nbsp;
+		<input type="button" value="Div Bg Prompt" onclick="divBGDynamic()" />&nbsp;&nbsp;
+		<hr/>
+		<input type="color" id="CP1" onchange="bodyBGCP1()" />&nbsp;&nbsp;
+		<input type="color" id="CP2" onchange="divBGCP2()" />&nbsp;&nbsp;
+		
+	</body>
+</html>
