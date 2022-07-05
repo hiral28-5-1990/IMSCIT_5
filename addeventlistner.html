@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>HTML DOM Events</h1>
+<h2>The onclick Event</h2>
+
+<p>Use the addEventListener() method to attach a "click" event to a p element:</p>
+
+<p id="demo">demo.</p>
+
+<script>
+document.getElementById("demo").addEventListener("click", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+	document.getElementById("demo").style.color = "red";
+}
+</script>
+
+</body>
+</html>
