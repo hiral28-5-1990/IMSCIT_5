@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Button Click event</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			
+			//for Disable the Show button
+			$("#btnShow").attr("disabled",true);
+			
+				$("#btnHide").click(function(){
+				
+					if(confirm("Are you want to hide the division"))
+					{
+						$("#newDiv").hide(3000);
+						$(this).attr("disabled",true);
+						//for enable the show button
+						$("#btnShow").attr("disabled",false);
+						$("#BtnToggle").text("show");
+					}
+				});
+				$("#btnShow").click(function(){
+						$("#newDiv").show(3000);
+						$(this).attr("disabled",true);
+						$("#btnHide").attr("disabled",false);
+						$("#BtnToggle").text("Hide");
+						
+				
+				});
+				$("#BtnToggle").click(function(){
+					if(confirm("Are you want to Show Division"))
+						{
+							$("#newDiv").toggle(2000);
+							//Change the toggle text 
+							($(this).text()=="Hide")
+							?($(this).text("Show"),$("#BtnHide").attr("disabled",true),$("#BtnShow").attr("disabled",false))
+							:($(this).text("Hide"),$("#BtnHide").attr("disabled",false),$("#BtnShow").attr("disabled",true));
+						}
+				
+					
+				});
+				$("#btnPlus").click(function(){
+					var MDHW=parseInt($("#newDiv").css("height"));
+					if(MDHW<=500)
+					{
+						MDHW+=20;
+						$("#newDiv").css("height",MDHW);
+						$("#newDiv").css("width",MDHW);
+						
+					}
+					else
+					{
+						alert("More 500px is not possible");
+					}
+				});
+				$("#btnMin").click(function(){
+					 var MDHW=parseInt($("#newDiv").css("height"));
+					 if(MDHW>=20)
+					 
+					 {
+						MDHW-=25;
+						$("#newDiv").css("height",MDHW);
+						$("#newDiv").css("width",MDHW);
+					 }
+					 else
+					 {
+						alert("Less 20px is not possible");
+					 }
+				});
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="newDiv" style="height:300px;width:300px;background-color:FF00FF";></div><hr/>
+		<button id="btnHide">Hide</button>&nbsp;&nbsp;<button id="btnShow">Show</button><hr/>
+		<button id="BtnToggle">Hide</button><hr/>
+		<button id="btnPlus" style="font-size:xx-large;"><b>+</b></button>&nbsp;&nbsp;<button id="btnMin" style="font-size:xx-large;"><b>-</b></button>
+	</body>
+</html>
