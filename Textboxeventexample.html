@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Textbox Event Example</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#txtFocus").focus(function(){
+					$(this).css("background-color","yellow");
+				
+				});
+				$("#txtBlur").blur(function(){
+					$(this).css("background-color","pink");
+					
+				});
+				$("#txtKeyPress").keypress(function(){
+					alert($(this).val());
+				});
+				$("#txtKeyUp").keyup(function(){
+				
+					alert($(this).val());
+				});
+				
+			
+		});
+		</script>
+	</head>
+	
+		<body>
+			<input type="text" id="txtFocus" placeholder="Txt Focus Event"/><hr/>
+			<input type="text" id="txtBlur" placeholder="Txt Blur Event"/><hr/>
+			<input type="text" id="txtKeyPress" placeholder="Txt KeyPress Event"/><hr/>
+			<input type="text" id="txtKeyUp" placeholder="Txt Key Up Event"/><hr/>
+			
+		</body>
+</html>
