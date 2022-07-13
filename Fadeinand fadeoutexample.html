@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Fade in Fadeout Example</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#fadeOut").attr("disabled",true);
+				$("#fadeIn").click(function(){
+					if(confirm("Are u sure"))
+					{
+						$("#Div1").fadeIn(3000);
+						$("#Div2").fadeIn(4000);
+						$("#Div3").fadeIn(6000);
+						$("#fadeOut").attr("disabled",false);
+						$(this).attr("disabled",true);
+						
+						
+					}
+									
+				
+				});
+				//Fade Out Code
+				$("#fadeOut").click(function(){
+					if(confirm("Are u sure"))
+					{
+						$("#Div1").fadeOut(1000);
+						$("#Div2").fadeOut(2000);
+						$("#Div3").fadeOut(3000);
+						$("#fadeIn").attr("disabled",false);
+						$(this).attr("disabled",true);
+						
+						
+					}
+									
+				
+				});
+				//Toggle in code
+				$("#fadeToggle").click(function(){
+					if(confirm("Are you sure!"))
+					{
+						$("#Div1").fadeToggle(1000);
+						$("#Div2").fadeToggle(2000);
+						$("#Div3").fadeToggle(3000);
+						
+					}
+				});
+			
+			
+			});
+		</script>
+		
+	</head>
+	<body>
+		<button id="fadeIn">Fade in</button>&nbsp;&nbsp;<button id="fadeOut">Fade Out</button>&nbsp;&nbsp;<button id="fadeToggle">FadeIn/Out Toggle</button>
+		<div id="Div1" style="height:100px;width:100px;background-color:#008080;display:none;margin-top:20px;border-radius:30%"></div><br/>
+		<div id="Div2" style="height:100px;width:100px;background-color:#00FF00;display:none;border-radius:20%"></div><br/>
+		<div id="Div3" style="height:100px;width:100px;background-color:#FF00FF;display:none;border-radius:10%"></div><br/>
+	
+	</body>
+
+</html>
